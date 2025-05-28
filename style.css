@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --bg-primary: #f4f1f9;
+  --ungu-tua: #551A8B;
+  --ungu-tua1: #311432;
+  --text: #B57EDC;
+  --text2: #b666d2;
+  --putih: #ffffff;
+  --bg-2: #fff0ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-primary);
+  font-family: "Inter", sans-serif;
+}
+
+/* container style */
+.container {
+  display: flex;
+}
+
+/* sidebar */
+#sidebar {
+  background: var(--putih);
+  min-width: 17%;
+  padding: 1rem 0 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+}
+#sidebar .logo h1 {
+  font-weight: 500;
+  color: var(--text2);
+}
+#sidebar .logo h1 span {
+  color: black;
+  letter-spacing: 3px;
+}
+#sidebar nav ul.list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: .5rem;
+}
+#sidebar nav ul.list h2 {
+  font-size: .9rem;
+  margin-top: 2rem;
+}
+#sidebar nav ul.list li {
+  padding: 15px 15px;
+  position: relative;
+  transition: all .3s;
+}
+#sidebar nav ul.list li.active,
+#sidebar nav ul.list li:hover {
+  background-color: var(--bg-2);
+  padding: 15px 15px;
+}
+#sidebar nav ul.list li.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 5px;
+  background: var(--text2);
+}
+#sidebar nav ul.list li a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
