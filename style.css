@@ -1,28 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
-  --clr-primary: #7380ec;
-  --clr-green-bg: rgba(46, 204, 113, .1);
-  --clr-green: rgba(46, 204, 113, 1);
-  --clr-danger: #ff7782;
-  --clr-success: #41f1b6;
-  --clr-white: #fff;
-  --clr-info-dark: #7d8da1;
-  --clr-info-light: #dce1eb;
-  --clr-dark: #363949;
-  --clr-warnig: #ff4edc;
-  --clr-warnig-bg: rgba(255, 78, 220,.1);
-  --clr-light: rgba(132, 139, 200, 0.18);
-  --clr-primary-variant: #111e88;
-  --clr-dark-variant: #677483;
-  --clr-color-background: #f6f6f9;
+  --bg-body: #f5f5f9;
+  --clr-sub-text: #6F6B7D;
+  --clr-text: #4B465C;
+  --clr-btn: linear-gradient(90deg, #6AD3FF 0%, #64ECF5 100%);
+  --clr-purple: #9155FD;
+  --bg-active: #f1edfe;
+  --clr-dark-4: rgba(0, 0, 0, 0.4);
+  --clr-dark: #181a1e;
 }
 
 /* dark theme */
 .dark-theme-variables {
-  --clr-color-background: #181a1e;
   --clr-white: #202528;
-  --clr-light: rgba(0, 0, 0, 0.4);
   --clr-dark: #edeffd;
   --clr-dark-variant: #677483;
   --box-shadow: 0 2rem 3rem var(--clr-light)
@@ -35,117 +26,63 @@
 }
 
 body {
-  background: var(--clr-color-background);
+  background: var(--bg-body);
   font-family: "Inter", sans-serif;
 }
 
-/* container style */
+/* container start */
 .container {
-  display: flex;
-  padding-top: 1rem;
-  column-gap: .5rem;
+  display: grid;
+  grid-template-columns: 18rem auto;
 }
+/* container end */
 
-/* sidebar */
+/* sidebar start */
 #sidebar {
-  background: var(--clr-white);
-  min-width: 17%;
-  padding: 1rem 0 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.5rem;
+  background: greenyellow;
   position: absolute;
   top: 0;
   bottom: 0;
+  width: 16rem;
+  padding: 1rem;
   overflow: auto;
-  scrollbar-width: none;
-  /* box-shadow: 0 5px 30px var(--clr-info-light); */
-  /* align-items: center; */
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
 }
 #sidebar .logo h1 {
-  font-weight: 600;
-  color: var(--clr-green);
+  color: var(--clr-purple);
+  letter-spacing: 1px;
 }
 #sidebar .logo h1 span {
-  color: black;
-  letter-spacing: 3px;
+  color: var(--clr-dark);
 }
-#sidebar nav ul.list {
+#sidebar nav .list {
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  row-gap: .5rem;
+  row-gap: 1rem;
 }
-#sidebar nav ul.list h2 {
-  font-size: .9rem;
-  margin-top: 2rem;
-}
-#sidebar nav ul.list li {
-  padding: 15px 15px;
+#sidebar nav .list h2 {
+  color: var(--clr-sub-text);
+  display: inline-block;
   position: relative;
-  transition: all .3s;
+  font-size: 12px;
+  font-weight: 300;
+  z-index: 1;
+  background: var(--bg-body);
 }
-#sidebar nav ul.list li.active,
-#sidebar nav ul.list li:hover {
-  background-color: var(--clr-green-bg);
-  padding: 15px 15px;
-}
-#sidebar nav ul.list li.active a {
-  color: var(--clr-green);
-}
-
-#sidebar nav ul.list li.active::before {
+#sidebar nav .list h2::after {
   content: "";
   position: absolute;
-  top: 0;
   left: 0;
-  bottom: 0;
-  width: 5px;
-  background: var(--clr-green);
+  width: 100%;
+  top: 50%;
+  height: 1px;
+  background: var(--clr-sub-text);
 }
-#sidebar nav ul.list li a{
+#sidebar nav .list li a {
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  column-gap: 1rem;
-  color: var(--clr-dark);
+  color: var(--clr-text);
 }
-
-/* main style */
-main {
-  padding-left: 19rem;
-  /* background: var(--clr-warnig); */
-  flex: 1;
-  display: grid;
-  grid-template-rows: 1rem 10rem auto;
-  row-gap: 2rem;
-}
-main #judul {
-  font-weight: 900;
-}
-main #cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 1.2rem;
-}
-main #cards .card {
-  background: var(--clr-white);
-  height: 8rem;
-  border-radius: 15%;
-  overflow: hidden;
-  padding: 1.2rem;
-}
-main #cards .card svg {
-  color: var(--clr-dark);
-}
-main #cards .card h2 {
-  color: var(--clr-dark);
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-/* right style */
-.right {
-  background: var(--clr-danger);
-  width: 15rem;
-}
+/* sidebar end */
