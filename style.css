@@ -3,12 +3,17 @@
 :root {
   --bg-body: #f5f5f9;
   --clr-sub-text: #6F6B7D;
+  --clr-gray: #d8d4df;
   --clr-text: #4B465C;
   --clr-btn: linear-gradient(90deg, #6AD3FF 0%, #64ECF5 100%);
-  --clr-purple: #9155FD;
+  --clr-purple: rgb(145, 85, 253);
+  --clr-green: #56CA00;
+  --clr-yellow: #FFB400;
+  --clr-blue: #16B1FF;
   --bg-active: #f1edfe;
   --clr-dark-4: rgba(0, 0, 0, 0.4);
-  --clr-dark: #181a1e;
+  --clr-dark: rgb(30, 41, 59);
+  --clr-white: #ffffff;
 }
 
 /* dark theme */
@@ -23,6 +28,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 
 body {
@@ -33,56 +40,156 @@ body {
 /* container start */
 .container {
   display: grid;
-  grid-template-columns: 18rem auto;
+  grid-template-columns: 18rem 1fr;
 }
 /* container end */
 
 /* sidebar start */
 #sidebar {
-  background: greenyellow;
   position: absolute;
   top: 0;
   bottom: 0;
   width: 16rem;
-  padding: 1rem;
   overflow: auto;
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
+  row-gap: 1.2rem;
+  border-right: 2px solid black;
+  scrollbar-width: none;
 }
 #sidebar .logo h1 {
   color: var(--clr-purple);
   letter-spacing: 1px;
+  margin-top: 1rem;
+}
+#sidebar .logo h1,
+#sidebar .list li {
+  padding-left: 1.5rem;
 }
 #sidebar .logo h1 span {
   color: var(--clr-dark);
 }
 #sidebar nav .list {
-  list-style-type: none;
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
 }
-#sidebar nav .list h2 {
-  color: var(--clr-sub-text);
-  display: inline-block;
-  position: relative;
-  font-size: 12px;
-  font-weight: 300;
-  z-index: 1;
-  background: var(--bg-body);
+#sidebar nav .list li {
+  width: 95%;
+  padding-block: .6rem;
+  border-radius: 0 10rem 10rem 0;
+  transition: all .3s;
 }
-#sidebar nav .list h2::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  top: 50%;
-  height: 1px;
-  background: var(--clr-sub-text);
+#sidebar nav .list li:hover {
+  background: var(--bg-active);
 }
 #sidebar nav .list li a {
-  text-decoration: none;
   color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  column-gap: .7rem;
+}
+#sidebar nav .list li.active {
+  background: linear-gradient(to right, rgba(145, 85, 253, 0.3), rgba(145, 85, 253, 1));
+}
+#sidebar nav .list li.active a {
+  color: var(--bg-body);
+}
+.section-title {
+  margin-top: .7rem;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--clr-sub-text);
+  position: relative;
+}
+.section-title::before {
+  content: "";
+  display: inline-block;
+  width: 7%;           
+  height: 1px;
+  background-color: #d0cfd1;
+  margin-right: 5px;
+}
+.section-title::after {
+  content: "";
+  flex: 1;               
+  height: 1px;
+  background-color: #d0cfd1;
+  margin-left: 10px;
 }
 /* sidebar end */
+
+/* main start */
+main {
+  margin-left: 17rem;
+  /* margin-top: 1rem; */
+  color: var(--clr-dark);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4rem 13rem 4rem;
+  row-gap: 1rem;
+  width: 100%;
+}
+main .header {
+  /* background: var(--clr-text); */
+  width: 61rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .header .judul {
+  /* color: var(--clr-gray); */
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+main .header .profile a img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+main .info {
+  /* background: var(--clr-sub-text); */
+  display: grid;
+  grid-template-columns:30% 1fr;
+  column-gap: 1.5rem;
+}
+main .info div {
+  background: var(--clr-white);
+  border-radius: 3%;
+  padding: .8rem;
+}
+main .info .p1, 
+main .info .pilihan {
+  color: var(--clr-sub-text);
+}
+main .info .name {
+  font-size: 1.5rem;
+}
+main .info .pilihan {
+  margin-top: 1rem;
+}
+main .info .card1 {
+  display: flex;
+}
+main .info .card1 ul {
+  margin-top: .3rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: .2rem;
+}
+main .info .card1 ul li:first-child a {
+  color: var(--clr-purple);
+}
+main .info .card1 .sayHallo ul li:nth-child(2) a {
+  color: var(--clr-green);
+}
+main .info .card1 ul li:last-child a {
+  color: var(--clr-yellow);
+}
+/* main .table {
+  background: var(--clr-text);
+} */
