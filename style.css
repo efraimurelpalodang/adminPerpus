@@ -131,8 +131,8 @@ main {
   color: var(--clr-dark);
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 4rem 11rem 4rem;
-  gap: 1rem;
+  grid-template-rows: 4rem 11rem 12rem;
+  gap: 1.5rem;
   width: 100%;
 }
 main header {
@@ -167,7 +167,11 @@ main .info div {
 }
 /*! style card1 start */
 main .info .card1,
-main .info .card2 {
+main .info .card2,
+main .section2 .cards .card-anggota,
+main .section2 .cards .card-transaksi,
+main .section2-right .section2-header,
+main .section2-right .section2-main {
   box-shadow: 0 0 10px var(--clr-shadow);
 }
 main .info .p1, 
@@ -238,8 +242,6 @@ main .info .card2 .card-tittle p span {
 main .info .card2 section {
   display: grid;
   grid-template-columns: 1fr 10.5rem 1fr 1fr;
-  /* column-gap: 1rem; */
-  /* padding: .2rem; */
 }
 main .info .card2 section .informasi {
   display: flex;
@@ -273,6 +275,117 @@ main .info .card2 section .informasi p {
   font-weight: 500;
 }
 /*todo: style card 2 end*/
-/* main .table {
-  background: var(--clr-text);
-} */
+
+/** section2 style start */
+main .section2 {
+  display: grid;
+  grid-template-columns:30% 1fr;
+  column-gap: 1.5rem;
+}
+main .section2 .cards {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1rem;
+} 
+main .section2 .cards .card-anggota,
+main .section2 .cards .card-transaksi {
+  background-color: var(--clr-white);
+  padding: .8rem;
+  border-radius: .4rem;
+}
+main .section2 .cards .card-anggota h2 {
+  font-weight: 300;
+}
+main .section2 .cards .card-anggota img {
+  width: 5rem;
+}
+main .section2 .cards .card-anggota p {
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 400;
+  color: var(--clr-sub-text);
+}
+main .section2 .cards .card-anggota p .jumlah-anggota {
+  color: var(--clr-text);
+} 
+/* card transaksi */
+main .section2 .cards .card-transaksi img {
+  width: 8rem;
+}
+main .section2 .cards .card-transaksi div {
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+}
+main .section2 .cards .card-transaksi div .jumlah-transaksi {
+  font-size: 2rem;
+  font-weight: 500;
+}
+main .section2 .cards .card-transaksi div p {
+  color: var(--clr-sub-text);
+}
+/** section2 style end */
+
+/*! section2-right start */
+main .section2-right {
+  display: grid;
+  grid-template-rows: 3rem 1fr;
+  row-gap: .5rem;
+}
+main .section2-right .section2-header {
+  border-radius: .3rem;
+  padding: .5rem;
+  background: var(--clr-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .section2-right .section2-header .laporan {
+  text-transform: capitalize;
+  color: var(--clr-sub-text);
+}
+main .section2-right .section2-header div {
+  display: flex;
+  align-items: center;
+}
+main .section2-right .section2-header div img {
+  width: 30px;
+  margin-left: .4rem;
+}
+main .section2-right .section2-main {
+  border-radius: .4rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  background: var(--clr-white);
+}
+main .section2-right .section2-main .laporan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-block: 1rem;
+}
+main .section2-right .section2-main .laporan h1 {
+  color: var(--clr-sub-text);
+  text-transform: capitalize;
+  font-weight: 300;
+}
+main .section2-right .section2-main .laporan p {
+  font-size: 2rem;
+  font-weight: 400;
+}
+/* section2-right end */
+
+/* section3 table start */
+main .rekomendasi table thead tr {
+  display: grid;
+  grid-template-columns: 20rem 20rem 15rem 5rem;
+  text-transform: uppercase;
+}
+main .rekomendasi table thead tr th {
+  font-weight: 400;
+  font-size: 15px;
+  text-align: start;
+}
+/* section3 table end */
