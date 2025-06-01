@@ -145,13 +145,24 @@ main header #kanan-header .profile-anggota a img {
   border-radius: 100%;
   width: 40px;
 }
+
 /*todo: main header end*/
 main #informasi {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 20rem 1fr;
-  grid-template-rows: 13.5rem 1fr;
+  grid-template-rows: 6rem 10rem 1fr;
   gap: 1.3rem;
+}
+main #informasi > div {
+  background: var(--clr-white);
+  box-shadow: 0 0 15px var(--clr-shadow);
+  padding: 1rem;
+  border-radius: .4rem;
+}
+main #informasi .kotak1-kiri {
+  display: flex;
+  flex-direction: column;
 }
 main #informasi .kotak1-kiri .tulisan {
   display: flex;
@@ -174,32 +185,86 @@ main #informasi .kotak1-kiri ul {
   justify-content: center;
   gap: .4rem;
   width: 11rem;
+  position: relative;
 }
 main #informasi .kotak1-kiri ul h2 {
   font-size: 1rem;
 }
-main #informasi .kotak1-kiri ul a {
-  background: var(--clr-purple);
-  padding: 7px 14px;
+
+/*! tbl-list style start */
+main #informasi .tbl-list {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: .8rem;
+}
+main #informasi .tbl-list::before {
+  content: "";
+  display: flex;
+  width: 3px;
+  height: 10rem;
+  background-color: var(--clr-text);
+  position: absolute;
+  top: 10.5rem;
+  z-index: -1;
+  background-color: var(--clr-sub-text);
+}
+main #informasi .tbl-list a {
   text-transform: capitalize;
-  color: var(--clr-white);
-  font-size: 13px;
-  border-radius: .3rem;
-  box-shadow: 0 0 5px var(--clr-purple);
-  transition: all .3s;
+  padding: 0;
+  color: var(--clr-sub-text);
+  border: none;
+  transform: rotate(5deg);
+  transform-origin: center;
+  font-family: "Gochi Hand", cursive;
+  text-decoration: none;
+  font-size: 15px;
+  cursor: pointer;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px var(--clr-shadow);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: #f1f5f8;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 2px solid var(--clr-sub-text);
 }
-main #informasi .kotak1-kiri ul a:nth-child(3) {
-  background: var(--clr-green);
-  box-shadow: 0 0 5px var(--clr-green);
-} 
-main #informasi .kotak1-kiri ul a:nth-child(4) {
-  background: var(--clr-blue);
-  box-shadow: 0 0 5px var(--clr-blue);
-} 
-main #informasi div {
-  background: var(--clr-white);
-  box-shadow: 0 0 15px var(--clr-shadow);
-  padding: 1rem;
-  border-radius: .4rem;
+main #informasi .tbl-list a:nth-child(2) {
+  border-color: var(--clr-green);
 }
+main #informasi .tbl-list a:nth-child(3) {
+  border-color: var(--clr-blue);
+}
+main #informasi .tbl-list a:active {
+  transform: rotate(-7deg);
+  padding-bottom: 0px;
+}
+/*! tbl-list style end */
+
+/*todo: section1-kanan start */
+main #informasi .kotak1-kanan h1 {
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 1rem;
+  color: var(--clr-text);
+}
+main #informasi .kotak1-kanan .laporan {
+  display: flex;
+  justify-content: space-around;
+}
+main #informasi .kotak1-kanan .laporan > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main #informasi .kotak1-kanan .laporan > div > h2 {
+  font-weight: 400;
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+main #informasi .kotak1-kanan .laporan > div > p {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+/*todo: section1-kanan end */
