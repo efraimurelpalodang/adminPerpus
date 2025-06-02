@@ -151,7 +151,7 @@ main #informasi {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 20rem 1fr;
-  grid-template-rows: 6rem 10rem 1fr;
+  grid-template-rows: 7rem 10rem 1fr;
   gap: 1.3rem;
 }
 main #informasi > div {
@@ -205,7 +205,7 @@ main #informasi .tbl-list::before {
   height: 10rem;
   background-color: var(--clr-text);
   position: absolute;
-  top: 10.5rem;
+  top: 11rem;
   z-index: -1;
   background-color: var(--clr-sub-text);
 }
@@ -243,11 +243,33 @@ main #informasi .tbl-list a:active {
 /*! tbl-list style end */
 
 /*todo: section1-kanan start */
-main #informasi .kotak1-kanan h1 {
+main #informasi .kotak1-kanan {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+main #informasi .kotak1-kanan .judul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main #informasi .kotak1-kanan .judul h1 {
   font-weight: 500;
   text-transform: capitalize;
   font-size: 1rem;
   color: var(--clr-text);
+}
+main #informasi .kotak1-kanan .judul > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+main #informasi .kotak1-kanan .judul > div p {
+  font-size: 13px;
+}
+main #informasi .kotak1-kanan .judul .waktu img {
+  width: 25px;
 }
 main #informasi .kotak1-kanan .laporan {
   display: flex;
@@ -268,3 +290,64 @@ main #informasi .kotak1-kanan .laporan > div > p {
   font-size: 1.5rem;
 }
 /*todo: section1-kanan end */
+main #informasi .kotak2-kanan {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+main #informasi .kotak2-kanan .judul {
+  display: flex;
+  flex-direction: column;
+  row-gap: .5rem;
+}
+main #informasi .kotak2-kanan .judul > h1 {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--clr-text);
+  font-size: 1rem;
+}
+main #informasi .kotak2-kanan .judul > p {
+  text-transform: capitalize;
+  color: var(--clr-text);
+}
+main #informasi .kotak2-kanan .judul > p > span {
+  font-weight: 300;
+}
+main #informasi .kotak2-kanan .kotak-informasi {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+main #informasi .kotak2-kanan .kotak-informasi > div {
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+}
+main #informasi .kotak2-kanan .kotak-informasi > div > img {
+  width: 40px;
+  border: 1.5px solid var(--clr-purple);
+  padding: 5px;
+  border-radius: 5px;
+}
+main #informasi .kotak2-kanan .kotak-informasi > div:nth-child(2) > img {
+  border-color: var(--clr-yellow);
+}
+main #informasi .kotak2-kanan .kotak-informasi > div:nth-child(3) > img {
+  border-color: var(--clr-green);
+}
+main #informasi .kotak2-kanan .kotak-informasi > div:last-child > img {
+  border-color: var(--clr-blue);
+}
+main #informasi .kotak2-kanan .kotak-informasi > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main #informasi .kotak2-kanan .kotak-informasi > div > div > p {
+  font-weight: 300;
+}
+main #informasi .kotak2-kanan .kotak-informasi > div > div > .buku {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: var(--clr-text);
+}
