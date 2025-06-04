@@ -119,7 +119,7 @@ main {
   max-height: 100vh;
   overflow-y: scroll;
   scrollbar-width: none;
-  /* padding-top: 2.5rem; */
+  padding-top: 2.5rem;
 }
 /*todo: main header start*/
 main header {
@@ -127,11 +127,11 @@ main header {
   align-items: center;
   justify-content: space-between;
   background: var(--bg-body);
-  /* padding-top: .5rem;
+  padding-top: .5rem;
   position: fixed;
   top: 0;
   left: 22%;
-  right: 2%; */
+  right: 2%;
 }
 main header #kiri-header .judul-halaman {
   font-weight: 300;
