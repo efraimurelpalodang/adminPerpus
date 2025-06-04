@@ -43,7 +43,7 @@ body {
   scrollbar-width: none;
 }
 #sidebar .logo h1 {
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  background: linear-gradient(to right, #9155fd, #16B1FF);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 1px;
