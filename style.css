@@ -40,11 +40,9 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 1.2rem;
-  /* border-right: 2px solid black; */
   scrollbar-width: none;
 }
 #sidebar .logo h1 {
-  /* color: var(--clr-purple); */
   background: linear-gradient(to right, #8e2de2, #4a00e0);
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -171,6 +169,9 @@ main #informasi > div {
   border-radius: .4rem;
   overflow: hidden;
 }
+main #informasi > div:first-child {
+  position: relative;
+}
 main #informasi .kotak1-kiri {
   display: flex;
   flex-direction: column;
@@ -214,14 +215,14 @@ main #informasi .tbl-list {
   align-items: center;
   row-gap: .8rem;
 }
-main #informasi .tbl-list::before {
+main #informasi .tbl-list a::before {
   content: "";
   display: flex;
   width: 3px;
-  height: 10rem;
+  height: 1rem;
   background-color: var(--clr-text);
   position: absolute;
-  top: 11.5rem;
+  top: -1rem;
   z-index: -1;
   background-color: var(--clr-sub-text);
 }
