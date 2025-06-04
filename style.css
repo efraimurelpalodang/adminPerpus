@@ -116,12 +116,22 @@ main {
   padding-inline: 1.5rem;
   padding-block: .8rem;
   color: var(--clr-sub-text);
+  max-height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  /* padding-top: 2.5rem; */
 }
 /*todo: main header start*/
 main header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: var(--bg-body);
+  /* padding-top: .5rem;
+  position: fixed;
+  top: 0;
+  left: 22%;
+  right: 2%; */
 }
 main header #kiri-header .judul-halaman {
   font-weight: 300;
@@ -360,3 +370,36 @@ main #informasi .kotak2-kanan .kotak-informasi > div > div > .buku {
   font-size: 1.2rem;
   color: var(--clr-text);
 }
+
+/*! style kotak 3 start */
+main #informasi .kotak3-kiri {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+main #informasi .kotak3-kiri .judul h1 {
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  color: var(--clr-text);
+}
+main #informasi .kotak3-kiri > div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+main #informasi .kotak3-kiri > div > .anggota {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+}
+main #informasi .kotak3-kiri > div > .anggota img {
+  width: 50px;
+}
+main #informasi .kotak3-kiri > div > .anggota > div h2 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: var(--clr-text);
+}
+/*! style kotak 3 end */
