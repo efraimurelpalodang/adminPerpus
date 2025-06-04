@@ -117,19 +117,12 @@ main {
   max-height: 100vh;
   overflow-y: scroll;
   scrollbar-width: none;
-  padding-top: 2.5rem;
 }
 /*todo: main header start*/
 main header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--bg-body);
-  padding-top: .5rem;
-  position: fixed;
-  top: 0;
-  left: 22%;
-  right: 2%;
 }
 main header #kiri-header .judul-halaman {
   font-weight: 300;
@@ -143,9 +136,93 @@ main header #kanan-header {
   justify-content: space-between;
   column-gap: 1rem;
 }
-main header #kanan-header .tbl-keluar a svg {
-  color: crimson;
+/*! tbl-list style start */
+main header #kanan-header .tbl-list {
+  display: flex;
+  align-items: center;
+  column-gap: .8rem;
 }
+main header #kanan-header .tbl-list a {
+  text-transform: capitalize;
+  width: 150px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: none;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.089);
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 12px;
+}
+main header #kanan-header .tbl-list a:nth-child(2) {
+  width: 230px;
+}
+main header #kanan-header .tbl-list a:nth-child(2) .kiri {
+  background: var(--clr-blue);
+}
+main header #kanan-header .tbl-list a:nth-child(2) .jumlah {
+  color: var(--clr-blue);
+}
+main header #kanan-header .tbl-list a:hover:nth-child(2) .kiri {
+  background: #059be7;
+}
+main header #kanan-header .tbl-list a:last-child .kiri {
+  background: var(--clr-yellow);
+}
+main header #kanan-header .tbl-list a:last-child .jumlah {
+  color: var(--clr-yellow);
+}
+main header #kanan-header .tbl-list a:hover:last-child .kiri {
+  background: #eca603;
+}
+main header #kanan-header .tbl-list .kiri {
+  width: 60%;
+  height: 100%;
+  background-color: var(--clr-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all .3s;
+}
+main header #kanan-header .tbl-list .kiri .aksi {
+  color: white;
+  font-weight: 600;
+}
+main header #kanan-header .tbl-list .jumlah {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-purple);
+  font-weight: 600;
+  position: relative;
+  background-color: white;
+}
+main header #kanan-header .tbl-list .jumlah::before {
+  height: 8px;
+  width: 8px;
+  position: absolute;
+  content: "";
+  background-color: rgb(255, 255, 255);
+  transform: rotate(45deg);
+  left: -4px;
+}
+main header #kanan-header .tbl-list a:hover .kiri {
+  background-color: rgb(138, 91, 225);
+}
+main header #kanan-header .tbl-list a:active .kiri {
+  background-color: rgb(201, 0, 0);
+}
+main header #kanan-header .tbl-list a:active .kiri svg {
+  transform: scale(1.15);
+  transform-origin: top;
+}
+/*! tbl-list style end */
 main header #kanan-header .profile-anggota a {
   display: block;
 }
@@ -153,13 +230,13 @@ main header #kanan-header .profile-anggota a img {
   border-radius: 100%;
   width: 40px;
 }
-
 /*todo: main header end*/
+
 main #informasi {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 20rem 1fr;
-  grid-template-rows: 7.5rem 10rem 1fr;
+  grid-template-rows: 10rem 10rem 1fr;
   gap: 1.3rem;
 }
 main #informasi > div {
@@ -169,34 +246,33 @@ main #informasi > div {
   border-radius: .4rem;
   overflow: hidden;
 }
-main #informasi > div:first-child {
-  position: relative;
-}
-main #informasi .kotak1-kiri {
+
+/*todo: section1-kanan statr */
+main #informasi .kotak1 {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-main #informasi .kotak1-kiri > p {
+main #informasi .kotak1 > p {
   color: var(--clr-text);
   font-weight: 500;
 }
-main #informasi .kotak1-kiri .tulisan {
+main #informasi .kotak1 .tulisan {
   display: flex;
   flex-direction: column;
   row-gap: .2rem;
   margin-bottom: .7rem;
 }
-main #informasi .kotak1-kiri .tulisan h1,
-main #informasi .kotak1-kiri ul h2 {
+main #informasi .kotak1 .tulisan h1,
+main #informasi .kotak1 ul h2 {
   color: var(--clr-text);
   font-weight: 500;
   text-transform: capitalize;
 }
-main #informasi .kotak1-kiri .tulisan p {
+main #informasi .kotak1 .tulisan p {
   text-transform: capitalize;
 }
-main #informasi .kotak1-kiri ul {
+main #informasi .kotak1 ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -204,203 +280,156 @@ main #informasi .kotak1-kiri ul {
   width: 11rem;
   position: relative;
 }
-main #informasi .kotak1-kiri ul h2 {
+main #informasi .kotak1 ul h2 {
   font-size: 1rem;
-}
-
-/*! tbl-list style start */
-main #informasi .tbl-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: .8rem;
-}
-main #informasi .tbl-list a::before {
-  content: "";
-  display: flex;
-  width: 3px;
-  height: 1rem;
-  background-color: var(--clr-text);
-  position: absolute;
-  top: -1rem;
-  z-index: -1;
-  background-color: var(--clr-sub-text);
-}
-main #informasi .tbl-list a {
-  text-transform: capitalize;
-  padding: 0;
-  color: var(--clr-sub-text);
-  border: none;
-  transform: rotate(5deg);
-  transform-origin: center;
-  font-family: "Gochi Hand", cursive;
-  text-decoration: none;
-  font-size: 15px;
-  cursor: pointer;
-  padding-bottom: 3px;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px var(--clr-shadow);
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  background: #f1f5f8;
-  display: block;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  border: 2px solid var(--clr-sub-text);
-}
-main #informasi .tbl-list a:nth-child(2) {
-  border-color: var(--clr-green);
-}
-main #informasi .tbl-list a:nth-child(3) {
-  border-color: var(--clr-blue);
-}
-main #informasi .tbl-list a:active {
-  transform: rotate(-7deg);
-  padding-bottom: 0px;
-}
-/*! tbl-list style end */
-
-/*todo: section1-kanan start */
-main #informasi .kotak1-kanan {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-  padding: 0;
-}
-main #informasi .kotak1-kanan .judul {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--bg-body);
-  padding: .5rem .7rem;
-}
-main #informasi .kotak1-kanan .judul h1 {
-  font-weight: 500;
-  text-transform: capitalize;
-  font-size: .9rem;
-  color: var(--clr-text);
-}
-main #informasi .kotak1-kanan .judul > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: .5rem;
-}
-main #informasi .kotak1-kanan .judul > div p {
-  font-size: 13px;
-}
-main #informasi .kotak1-kanan .judul .waktu img {
-  width: 25px;
-}
-main #informasi .kotak1-kanan .laporan {
-  display: flex;
-  justify-content: space-around;
-}
-main #informasi .kotak1-kanan .laporan > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-main #informasi .kotak1-kanan .laporan > div > h2 {
-  font-weight: 400;
-  text-transform: capitalize;
-  font-size: 1rem;
-}
-main #informasi .kotak1-kanan .laporan > div > p {
-  font-weight: 600;
-  font-size: 1.5rem;
 }
 /*todo: section1-kanan end */
-main #informasi .kotak2-kanan {
+
+/** kotak2 style start */
+main #informasi .kotak2 {
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
+  row-gap: 1.7rem;
 }
-main #informasi .kotak2-kanan .judul {
+main #informasi .kotak2 .judul {
   display: flex;
   flex-direction: column;
-  row-gap: .5rem;
+  row-gap: .6rem;
 }
-main #informasi .kotak2-kanan .judul > h1 {
+main #informasi .kotak2 .judul > h1 {
   text-transform: uppercase;
   font-weight: 400;
   color: var(--clr-text);
   font-size: 1rem;
 }
-main #informasi .kotak2-kanan .judul > p {
+main #informasi .kotak2 .judul > p {
   text-transform: capitalize;
   color: var(--clr-text);
 }
-main #informasi .kotak2-kanan .judul > p > span {
+main #informasi .kotak2 .judul > p > span {
   font-weight: 300;
 }
-main #informasi .kotak2-kanan .kotak-informasi {
+main #informasi .kotak2 .kotak-informasi {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-main #informasi .kotak2-kanan .kotak-informasi > div {
+main #informasi .kotak2 .kotak-informasi > div {
   display: flex;
   align-items: center;
   column-gap: .5rem;
 }
-main #informasi .kotak2-kanan .kotak-informasi > div > img {
+main #informasi .kotak2 .kotak-informasi > div > img {
   width: 40px;
   border: 1.5px solid var(--clr-purple);
   padding: 5px;
   border-radius: 5px;
 }
-main #informasi .kotak2-kanan .kotak-informasi > div:nth-child(2) > img {
+main #informasi .kotak2 .kotak-informasi > div:nth-child(2) > img {
   border-color: var(--clr-yellow);
 }
-main #informasi .kotak2-kanan .kotak-informasi > div:nth-child(3) > img {
+main #informasi .kotak2 .kotak-informasi > div:nth-child(3) > img {
   border-color: var(--clr-green);
 }
-main #informasi .kotak2-kanan .kotak-informasi > div:last-child > img {
+main #informasi .kotak2 .kotak-informasi > div:last-child > img {
   border-color: var(--clr-blue);
 }
-main #informasi .kotak2-kanan .kotak-informasi > div > div {
+main #informasi .kotak2 .kotak-informasi > div > div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-main #informasi .kotak2-kanan .kotak-informasi > div > div > p {
+main #informasi .kotak2 .kotak-informasi > div > div > p {
   font-weight: 300;
 }
-main #informasi .kotak2-kanan .kotak-informasi > div > div > .buku {
+main #informasi .kotak2 .kotak-informasi > div > div > .buku {
   font-weight: 400;
   font-size: 1.2rem;
   color: var(--clr-text);
 }
+/** kotak2 style end */
 
 /*! style kotak 3 start */
-main #informasi .kotak3-kiri {
+main #informasi .kotak3 {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
 }
-main #informasi .kotak3-kiri .judul h1 {
+main #informasi .kotak3 .judul h1 {
   font-weight: 500;
   text-transform: capitalize;
   font-size: 1.2rem;
   color: var(--clr-text);
 }
-main #informasi .kotak3-kiri > div {
+main #informasi .kotak3 > div {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
 }
-main #informasi .kotak3-kiri > div > .anggota {
+main #informasi .kotak3 > div > .anggota {
   display: flex;
   align-items: center;
   justify-content: space-around;
   width: 80%;
 }
-main #informasi .kotak3-kiri > div > .anggota img {
+main #informasi .kotak3 > div > .anggota img {
   width: 50px;
 }
-main #informasi .kotak3-kiri > div > .anggota > div h2 {
+main #informasi .kotak3 > div > .anggota > div h2 {
   font-weight: 400;
   font-size: 1.2rem;
   color: var(--clr-text);
 }
 /*! style kotak 3 end */
+
+/*! style kotak 4 start*/
+main #informasi .kotak4 {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 0;
+}
+main #informasi .kotak4 .judul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-body);
+  padding: .8rem;
+}
+main #informasi .kotak4 .judul h1 {
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 1rem;
+  color: var(--clr-text);
+}
+main #informasi .kotak4 .judul > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+main #informasi .kotak4 .judul > div p {
+  font-size: 13px;
+}
+main #informasi .kotak4 .judul .waktu img {
+  width: 25px;
+}
+main #informasi .kotak4 .laporan {
+  display: flex;
+  justify-content: space-around;
+}
+main #informasi .kotak4 .laporan > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main #informasi .kotak4 .laporan > div > h2 {
+  font-weight: 400;
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+main #informasi .kotak4 .laporan > div > p {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+/*! style kotak 4 end*/
