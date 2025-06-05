@@ -342,7 +342,8 @@ main #informasi .kotak2 .kotak-informasi > div > div {
   align-items: center;
 }
 main #informasi .kotak2 .kotak-informasi > div > div > p {
-  font-weight: 300;
+  font-weight: 400;
+  text-transform: capitalize;
 }
 main #informasi .kotak2 .kotak-informasi > div > div > .buku {
   font-weight: 400;
@@ -459,6 +460,7 @@ main section:last-child table > tbody tr td:first-child .nama p:first-child {
 }
 main section:last-child table > tbody tr td:first-child .nama p:last-child {
   font-size: .8rem;
+  text-transform: none;
 }
 main section:last-child table thead {
   background: var(--bg-body);
