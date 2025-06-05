@@ -248,9 +248,9 @@ main section:last-child {
   border-radius: .4rem;
   overflow: hidden;
 }
-/* main #informasi > div:first-child {
+main #informasi > div:first-child {
   align-self: start;
-} */
+}
 
 /*todo: section1-kanan statr */
 main #informasi .kotak1 {
@@ -268,11 +268,11 @@ main #informasi .kotak1 .tulisan {
   row-gap: .2rem;
   margin-bottom: .7rem;
 }
-main #informasi .kotak1 .tulisan h1,
-main #informasi .kotak1 ul h2 {
+main #informasi .kotak1 .tulisan h1 {
   color: var(--clr-text);
   font-weight: 500;
   text-transform: capitalize;
+  font-size: 1.4rem;
 }
 main #informasi .kotak1 .tulisan p {
   text-transform: capitalize;
