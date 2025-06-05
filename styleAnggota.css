@@ -1,0 +1,70 @@
+.kumpulan-kartu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  justify-content: center;
+}
+.kartu {
+  max-width: 310px;
+  width: 100%;
+  background: #fff;
+  padding: 1rem 1.3rem;
+  border-radius: .7rem;
+  border: 1px solid #d9d9d9;
+  font-size: .9rem;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  box-shadow: 0 0 15px rgba(111, 107, 125, .2);
+}
+.kartu .header-kartu {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+.kartu .header-kartu > img {
+  height: 45px;
+  width: 45px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  object-fit: cover;
+}
+.kartu .header-kartu > .detail {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.kartu .header-kartu > .detail  > .nama {
+  color: #4B465C;
+  font-weight: 500;
+}
+.kartu .header-kartu > .detail  > .email {
+  text-transform: none;
+  font-size: .8rem;
+}
+.kartu > .alamat > p {
+  text-transform: none;
+}
+.kartu .tombol {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: .7rem;
+}
+.kartu .tombol a {
+  display: block;
+  background: #908e97;
+  width: 100%;
+  text-align: center;
+  padding-block: .3rem;
+  color: #f5f5f9;
+  font-weight: 500;
+  border-radius: .7rem;
+  background: #9155fd;
+}
+.kartu .tombol a:last-child {
+  background: crimson;
+}
