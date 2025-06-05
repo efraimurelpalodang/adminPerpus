@@ -248,6 +248,9 @@ main section:last-child {
   border-radius: .4rem;
   overflow: hidden;
 }
+/* main #informasi > div:first-child {
+  align-self: start;
+} */
 
 /*todo: section1-kanan statr */
 main #informasi .kotak1 {
